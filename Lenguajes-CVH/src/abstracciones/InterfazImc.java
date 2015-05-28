@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
 
-http://github.com/daton/lenguajes-cm
+http://github.com/daton/lenguajes-juancm
 http://github.com/curso-lenguajes/lenguajes
 
  */
