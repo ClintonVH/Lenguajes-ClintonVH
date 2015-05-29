@@ -12,7 +12,17 @@ package abstracciones;
 public class Imc {
      private float peso;
     private float altura;
-   
+    private boolean flaco;
+    
+    public void setFlaco(boolean flaco){
+        this.flaco=flaco;
+    }
+    public boolean isFlaco(){
+        return flaco;
+    }
+   public Imc(){
+       
+   }
     public Imc(float altura, float peso){
     
     }
