@@ -24,7 +24,8 @@ public class Imc {
        
    }
     public Imc(float altura, float peso){
-    
+    this.peso=peso;
+    this.altura=altura;
     }
     public String calcula_imc(){
         float  imc=peso/(altura*altura);
