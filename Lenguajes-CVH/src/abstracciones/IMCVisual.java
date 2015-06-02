@@ -37,6 +37,7 @@ public class IMCVisual extends javax.swing.JFrame {
         etiquetaResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Creado por ING. Clinton Vazquez H.");
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
