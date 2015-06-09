@@ -77,7 +77,7 @@ public class Ejercicio extends javax.swing.JFrame {
                                     .addComponent(jLabel2)
                                     .addComponent(Resultado)
                                     .addComponent(Resultado2))
-                                .addGap(0, 240, Short.MAX_VALUE))))
+                                .addGap(0, 234, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
