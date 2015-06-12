@@ -15,17 +15,29 @@ public class Chapultepec {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        // Animal raro=new Animal();
-        //   raro.setNombre("Rareza");
-        //   raro.setEdad(2);
-        Tortuga animall=new Tortuga();
-            animall.setNombre("Japonesa");
-            animall.setEdad(12);
-        Leon animal2=new Leon();
-            animal2.setNombre("Africano");
-            animal2.setEdad(20);
+        
+        Pollo p1=new Pollo();
+            p1.setNombre("Pollito Pio");
             
+        Leon l1=new Leon();
+            l1.setNombre("Simba");
+        Leon l2=new Leon();
+            l2.setNombre("Mufasa");
+        Delfin d1=new Delfin();
+            d1.setNombre("Flipper");
+        Tortuga t1=new Tortuga();
+            t1.setNombre("Crush");
+            
+         ComportamientoRuido animales[]=new ComportamientoRuido[4];
+          animales[0]=p1;
+          animales[1]=l1;
+          animales[2]=l2;
+          animales[3]=d1;
+            
+       for(ComportamientoRuido animal:animales){
+           System.out.println("El animal hace "+animal.hacerRuido());
+       }
+       
     }
     
 }
