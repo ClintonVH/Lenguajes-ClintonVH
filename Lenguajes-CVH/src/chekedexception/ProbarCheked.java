@@ -19,14 +19,13 @@ public class ProbarCheked {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception,IOException,FileNotFoundException{
         // TODO code application logic here
         File f=new File("archivaldo");
-        try {
+       
             FileOutputStream fos=new FileOutputStream(f);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ProbarCheked.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            ObjectOutputStream oos=new ObjectOutputStream(fos);
+       
         
     }
     
