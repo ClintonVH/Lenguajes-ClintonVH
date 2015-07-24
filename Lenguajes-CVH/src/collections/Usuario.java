@@ -10,18 +10,16 @@ package collections;
  * @author Clinton
  */
 public class Usuario {
-    public Usuario(){
-        
-    }
-    public Usuario(String nombre,int edad, String email){
+
+    String nombre;
+    Integer edad;//integer es el equivalente a itn pero en objetos
+    String email;
+    
+    public Usuario(String nombre, int edad, String email){
         this.nombre=nombre;
         this.edad=edad;
         this.email=email;
     }
-    
-    private String nombre;
-    private int edad;
-    private String email;
 
     public String getNombre() {
         return nombre;
@@ -31,11 +29,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -46,6 +44,4 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-            
-    
 }

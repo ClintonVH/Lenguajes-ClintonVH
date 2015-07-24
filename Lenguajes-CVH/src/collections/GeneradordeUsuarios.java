@@ -10,25 +10,24 @@ import java.util.List;
 
 /**
  *
- * @author Clinton
+ * @author T-107
  */
-public class GeneradordeUsuarios {
-    
+public class GeneradorDeusuarios {
+    /*Los collection tienen el potencial de usarse para construir prototipos de base de datos NoSQL
+    otra caracteristica de los collections es que tienen clases y metodos de ordenamiento*/
     private List<Usuario> usuarios;
-    
-    public GeneradordeUsuarios(){
-        Usuario u1=new Usuario("juan",42,"jc@gmail.com");
-        Usuario u2=new Usuario("Ana",22,"ana@outlook.com");
-        Usuario u3=new Usuario("Pedro",33,"pedro@yahoo.com");
-        Usuario u4=new Usuario("Pancha",60,"pancha@hotmail.com");
-        
+    public GeneradorDeusuarios(){
+        Usuario u1=new Usuario("Cris", 20, "cris_ctjmvr@hotmail.com");
+        Usuario u2=new Usuario("Jess", 19, "axojes@hotmail.com");
+        Usuario u3=new Usuario("Pepe", 22, "pepe@gmail.com");
+        Usuario u4=new Usuario("Pamcha",60,"pancha@hotmail.com");
         usuarios=new ArrayList<Usuario>();
         usuarios.add(u1);
         usuarios.add(u2);
         usuarios.add(u3);
         usuarios.add(u4);
     }
- 
+
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -36,8 +35,7 @@ public class GeneradordeUsuarios {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
-    public String agragarUsuarios(String nombre, int edad, String email){
+    public String agregarUsuario(String nombre, int edad, String email){
         Usuario u=new Usuario(nombre, edad, email);
         usuarios.add(u);
         return "Usuario agregado con exito";
