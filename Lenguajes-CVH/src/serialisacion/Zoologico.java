@@ -12,11 +12,15 @@ package serialisacion;
 public class Zoologico {
     public static void main(String[] args)throws Exception {
         
-        ModeloPersistenciaAnimal modelo=new ModeloPersistenciaAnimal();
+        ModeloPersistenciaAnimal m=new ModeloPersistenciaAnimal();
         Animal a=new Animal();
-        a =  modelo.buscarTodos();
-     
-        System.out.println(a.getNombre());
+        a.setNombre("Aguila");
+        a.setCarnivoro(true);
+        m.guardar(a);
+    
+        for(Animal ani:m.buscarTodos()){
+            System.out.println(ani.getNombre());
+        }
     }
     
 }
