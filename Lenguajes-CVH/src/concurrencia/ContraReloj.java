@@ -6,21 +6,57 @@
 package concurrencia;
 
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
 
 /**
  *
- * @author Clinton
+ * @author T-107
  */
-public class EjercicioThread extends javax.swing.JFrame implements Runnable {
+public class ContraReloj extends javax.swing.JFrame {
 
     /**
-     * Creates new form EjercicioThread
+     * Creates new form ContraReloj
      */
-    
-    
-    public EjercicioThread() {
+    int x=300;
+        int y=200;
+    public ContraReloj() {
         initComponents();
+        
+        jLabel1.setText("Hola");
+       Thread t1=new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+               while(true){
+        try{
+            Thread.sleep(1000);
+            setSize(x, y);
+            //vamos a crear un relojito chafa
+            Calendar cal=Calendar.getInstance();
+            int hora=cal.get(Calendar.HOUR);
+            int minutos=cal.get(Calendar.MINUTE);
+            int segundos=cal.get(Calendar.SECOND);
+            //if(hora==6 && minutos==56){
+                x=x+2;
+                y=y+2;
+            //}else{
+                
+            
+            jLabel1.setText(hora + ":" + minutos + ":" + segundos);
+        //}     
+        }catch(Exception ex){
+            
+        }          catch (Throwable ex) {
+                       Logger.getLogger(ContraReloj.class.getName()).log(Level.SEVERE, null, ex);
+                   }
     }
+            }
+        });
+            t1.start();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,28 +67,28 @@ public class EjercicioThread extends javax.swing.JFrame implements Runnable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        etiHora = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        etiHora.setFont(new java.awt.Font("Arial Black", 3, 48)); // NOI18N
-        etiHora.setText("hora");
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(etiHora, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(etiHora, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addGap(93, 93, 93)
+                .addComponent(jLabel1)
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         pack();
@@ -75,54 +111,25 @@ public class EjercicioThread extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EjercicioThread.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EjercicioThread.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EjercicioThread.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EjercicioThread.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ContraReloj.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        inicio();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EjercicioThread().setVisible(true);
+                new ContraReloj().setVisible(true);
             }
         });
     }
-    
-    public static void inicio(){
-         Runnable r=new ThreadPolimorfico();
-        Thread t1=new Thread(r);
-        t1.start();
-        
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel etiHora;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
-    
-    @Override
-    public void run() {
-         while(true){
-        try{
-            Thread.sleep(1000);
-            //vamos a crear un relojito chafa
-            Calendar cal=Calendar.getInstance();
-            int hora=cal.get(Calendar.HOUR);
-            int minutos=cal.get(Calendar.MINUTE);
-            int segundos=cal.get(Calendar.SECOND);
-            
-           etiHora.setText(hora + ":" + minutos + ":" + segundos);
-                    
-        }catch(Exception ex){
-            
-        }
-    }
-}
 }
